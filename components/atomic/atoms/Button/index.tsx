@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { TouchableOpacity } from 'react-native';
 import Text from '../Text';
-
+import { styleByType } from './index.styles';
 type props = {
   title: string;
   type?: 'primary' | 'secundary';
@@ -15,30 +15,6 @@ const Button: React.FC<props> = ({
   type = 'primary',
   style,
 }): JSX.Element => {
-  const styleByType: any = {
-    primary: {
-      colorText: '#fff',
-      style: {
-        backgroundColor: '#FF6C00',
-        padding: 15,
-        borderRadius: 5,
-        justifyContent: 'center',
-        alignItems: 'center',
-      },
-    },
-    secundary: {
-      colorText: '#FF6C00',
-      style: {
-        backgroundColor: 'white',
-        padding: 15,
-        borderRadius: 5,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderColor: '#FF6C00',
-        borderWidth: 3,
-      },
-    },
-  };
   return (
     <TouchableOpacity
       style={[styleByType[type].style, style]}
