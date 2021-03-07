@@ -6,7 +6,7 @@ import Card from '../../atoms/Card';
 import Image from '../../atoms/Image';
 import Price from '../../molecules/Price';
 import Button from '../../atoms/Button';
-
+import { styles } from './index.style';
 type props = {
   product: product;
   onPress: () => void;
@@ -43,27 +43,13 @@ const ItemCard: React.FC<props> = ({ product, onPress }): JSX.Element => {
           flexDirection: 'row',
         }}
       >
-        <View
-          style={{
-            flex: 1,
-            height: '100%',
-            alignItems: 'center',
-            justifyContent: 'space-around',
-          }}
-        >
+        <View style={styles.main}>
           {imageObject && <Image uri={imageObject?.medium} type="medium" />}
           <Text size={16} color="#C4C4C4" fontWeight="700">
             cod: {sku}
           </Text>
         </View>
-        <View
-          style={{
-            flex: 2,
-            padding: 1,
-            height: '100%',
-            justifyContent: 'space-around',
-          }}
-        >
+        <View style={styles.infoContainer}>
           <Text
             size={20}
             color="black"
